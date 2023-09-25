@@ -5,16 +5,14 @@ const Home = () => {
 
 	const [books, setBooks] = useState([])
 	const [loading, setLoading] = useState(false)
-	const [showType, setShowType] = useState('table') 
+	const [showType, setShowType] = useState('table')  
  
 	useEffect(() => {
 		setLoading(true);
 		axios
 			.get("http://localhost:5000/book")
 			.then((res) => {
-
-				setBooks(res.data.data)
-				console.log(books)
+				setBooks(res.data.data) 
 				setLoading(false)
 			})
 			.catch((error) => {
@@ -25,11 +23,11 @@ const Home = () => {
 
 
 	return (
-		<ol>
-			 {books.map(item => {
-				<li>{item}</li>
-			 })}
-		</ol>
+
+		<div>
+			 
+		</div>
+		 
 	);
 };
 
