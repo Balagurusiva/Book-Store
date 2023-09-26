@@ -41,7 +41,7 @@ const Home = () => {
 			</Stack>
 
 
-			<Stack justifyContent={{ xs: "center", ms: "center" }} alignItems="center" sx={{ xs: { p: 6 }, ms: { p: 6 } }} >
+			<Stack justifyContent={{ xs: "center", ms: "center" }} alignItems="center"     sx={{ xs: { p: 6 }, ms: { p: 6 } }} >
 
 				{loading ?
 					(<Spinner />) :
