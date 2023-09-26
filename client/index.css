@@ -5,5 +5,24 @@
 html{
     background-color: rgb(4, 8, 30);
     color:white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+    font-size: 20px;
 }
+
+input{
+    color: white;
+    margin-left: 8px;
+    padding: 5px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    border-bottom: 2px solid lightblue;
+}
+
+ 
+label{
+    padding:5px ;
+}
+ 
+ 

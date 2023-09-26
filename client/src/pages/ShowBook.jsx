@@ -6,14 +6,15 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import ListItem from '@mui/material/ListItem'; 
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
 import Spinner from '../components/Spinner'
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
+import EditRoundedIcon from '@mui/icons-material/EditRounded' 
+import DeleteOutlineRoundedIcon from '@mui/icons-material/DeleteOutlineRounded';
 
 
 const ShowBook = () => {
@@ -41,7 +42,7 @@ const ShowBook = () => {
     <>
       <Stack className='border-b-2  border-zinc-800 mb-10' direction="row" justifyContent="space-between" alignItems="center">
         <Typography variant='h3'>Book Store</Typography>
-        <Link to='/book/create'><HomeBoxRoundedIcon sx={{ color: "lightblue", fontSize: "45px" }} /></Link>
+        <Link to='/'><HomeBoxRoundedIcon sx={{  color: "lightblue", fontSize: "35px",  marginRight:"10px" }} /></Link>
       </Stack>
 
       <Stack justifyContent="center" alignItems="center" width="100" height="85vh"   >
@@ -92,9 +93,16 @@ const ShowBook = () => {
                     <p>publish year : {book.publishYear} </p>
 
                   </ListItem>
-
-
                 </List>
+
+                <Stack width="100%" direction="row"  justifyContent="space-evenly" paddingBottom="8px">
+                  <Link to={'/book/delete/' + id}>
+                    <DeleteOutlineRoundedIcon sx={{ color: "red" }} /></Link>
+                  <Link to={'/book/edit/' + id}>
+                    <EditRoundedIcon sx={{ color: "blue" }} />
+                  </Link>
+
+                </Stack>
               </>
             )}
 

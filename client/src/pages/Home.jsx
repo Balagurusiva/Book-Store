@@ -1,8 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Typography } from '@mui/material'
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+import Card from '@mui/material/Card'; 
 import CardContent from '@mui/material/CardContent';
 import { Link } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
@@ -15,8 +14,7 @@ import Spinner from '../components/Spinner'
 const Home = () => {
 
 	const [books, setBooks] = useState([])
-	const [loading, setLoading] = useState(false)
-	const [showType, setShowType] = useState('table')
+	const [loading, setLoading] = useState(false) 
 
 	useEffect(() => {
 		setLoading(true);
@@ -37,19 +35,19 @@ const Home = () => {
 		<>
 			<Stack className='border-b-2  border-zinc-800 mb-10' direction="row" justifyContent="space-between" alignItems="center">
 				<Typography variant='h3'>Book Store</Typography>
-				<Link to='/book/create'><AddBoxRoundedIcon sx={{ color: "lightblue", fontSize: "50px" }} /></Link>
+				<Link to='/book/create'><AddBoxRoundedIcon sx={{ color: "lightblue", fontSize: "35px",  marginRight:"10px"}} /></Link>
 			</Stack>
 
 
-			<Stack justifyContent={{ xs: "center", ms: "center" }} alignItems="center"     sx={{ xs: { p: 6 }, ms: { p: 6 } }} >
+			<Stack justifyContent={{ xs: "center", ms: "center" }} alignItems="center"  >
 
 				{loading ?
 					(<Spinner />) :
 					(
-						<Stack direction='row' spacing={{ xs: 1, sm: 2 }} useFlexGap flexWrap="wrap">
+						<Stack direction='row' justifyContent="center" spacing={{ xs: 1, sm: 2 }} useFlexGap flexWrap="wrap"  padding={{xs:2, sm:6}}>
 							{books.map(item => {
 								return (
-									<Card sx={{ minWidth: 275, maxWidth: 300, }}>
+									<Card sx={{  width:{xs:"90%", sm:300} }}>
 
 										<Link to={'/book/detail/' + item._id}>
 											<CardContent>
